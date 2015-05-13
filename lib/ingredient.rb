@@ -1,3 +1,3 @@
-class Recipe < ActiveRecord::Base
+class Ingredient < ActiveRecord::Base
   validates(:name, :presence => true)
 end
