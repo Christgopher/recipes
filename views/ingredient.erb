@@ -1,0 +1,15 @@
+<h1><%= @ingredient.name() %></h1>
+<hr>
+<% @ingredient.recipes.each() do |recipe| %>
+    <li><%= recipe.name() %></li>
+<% end %>
+
+
+
+
+<form>
+  <br>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

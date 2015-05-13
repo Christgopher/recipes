@@ -1,0 +1,25 @@
+<h1>Recipes</h1>
+<hr>
+<% @recipes.each() do |recipe| %>
+    <li><a href = "/recipe/<%= recipe.id() %>"><%= recipe.name() %></a></li>
+<% end %>
+<br>
+<h3>Add a recipe:</h3>
+<form action="/recipe" method="post">
+
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text">
+
+  <label for="instruction">Instructions</label>
+  <input id="instruction" name="instruction" type="text">
+
+  <button type="submit">Add</button>
+</form>
+
+
+<form>
+  <br>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

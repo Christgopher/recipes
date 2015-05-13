@@ -1,0 +1,24 @@
+<h1>The Pantry</h1>
+<hr>
+<% @ingredients.each() do |ingredient| %>
+    <li><a href = "/ingredient/<%= ingredient.id() %>"><%= ingredient.name() %></a></li>
+<% end %>
+
+<br>
+
+<form action="/ingredient" method="post">
+
+  <label for="name">Enter ingredient:</label>
+  <input id="name" name="name" type="text">
+
+
+  <button type="submit">Add</button>
+</form>
+<hr>
+
+<form>
+  <br>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

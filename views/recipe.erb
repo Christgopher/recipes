@@ -1,0 +1,45 @@
+<h1><%= @recipe.name() %></h1>
+<h4>Rating: <%= @recipe.rating() %> Stars</h4>
+<hr>
+<br>
+<% @recipe.ingredients.each() do |ingredient| %>
+    <li><%= ingredient.name() %></li>
+<% end %>
+
+<h4><%= @recipe.instructions() %></h4>
+
+<hr>
+<br>
+<form action="/recipe/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @ingredients.each() do |ingredient| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="ingredient_ids[]" value="<%= ingredient.id() %>"><%= ingredient.name() %>
+      </label>
+    </div>
+  <% end %>
+  <button type="submit">Add ingredients</button>
+</form>
+<br>
+<hr>
+<form action="/recipe_rating" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input id="recipe_id" name="recipe_id" type="hidden" value="<%= @recipe.id() %>">
+  <label for="rating">Select a rating</label>
+  <select id='rating' name='rating' type='text'>
+      <option value="1"> 1 STAR</option>
+      <option value="2"> 2 STAR</option>
+      <option value="3"> 3 STAR</option>
+      <option value="4"> 4 STAR</option>
+      <option value="5"> 5 STAR</option>
+  </select>
+  <button type="submit">Add rating</button>
+</form>
+
+<form>
+  <br>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>
